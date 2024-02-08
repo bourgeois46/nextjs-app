@@ -14,7 +14,7 @@ const Home = ({allPostsData}:  {
   }[]
 }) => {
   return (
-    <div>
+    <div className={homeStyles.container}>
       <Head>
        <title>Bourgeois</title>
        </Head>
@@ -31,9 +31,9 @@ const Home = ({allPostsData}:  {
         <ul className={homeStyles.list}>
           {allPostsData.map(({id, date, title}) =>
           <li className={homeStyles.listItem} key={id}>
-          
+           <Link href={`/posts/${id}`} legacyBehavior>
                 <a>{title}</a>
-           
+          </Link>
             <br/>
             <small className={homeStyles.lightText}>
               {date}
